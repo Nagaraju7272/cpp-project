@@ -3,7 +3,7 @@ name: CPP Django Elastic Beanstalk CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
