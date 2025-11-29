@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-block">
+            <h4 class="sub-title">Add Passes</h4>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% include 'includes/messages.html' %}
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Full Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="fullname" placeholder="Enter full name" required="True">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Gender</label>
+                    <div class="col-sm-10">
+                        <select style="height:50px" type="text" name="gender" value="" class="form-control" required='true'>
+                            <option value="">Choose Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Transgender">Transgender</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Profile Pic</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" name="profile_pic1" required="True">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Contact Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="cnumber" value="" class="form-control" placeholder="Enter 10 digit number" required='true' maxlength="10" pattern="[0-9]+">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email Address</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" value="" class="form-control" placeholder="Enter email address" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Identity Type</label>
+                    <div class="col-sm-10">
+                        <select  style="height:50px" type="text" name="identitytype" value="" class="form-control" required='true'>
+                            <option value="">Choose Identity Type</option>
+                            <option value="Voter Card">PPSN Card</option>
+                            <option value="PAN Card">GNIB Card</option>
+                            <option value="Student Card">Student Card</option>
+                            <option value="Driving License">Driving License</option>
+                            <option value="Passport">Passport</option>
+                            <option value="Any Official Card">Any Official Card</option>
+                            <option value="Any Other Govt Issued Doc">Any Other Govt Issued Doc</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Identity Card No.</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="icnum" value="" class="form-control" placeholder="Enter identity card number" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mode of transport</label>
+                    <div class="col-sm-10">
+                        <select  style="height:50px" type="text" name="category_id" id="category_id" value="" class="form-control" required="true">
+                            <option value="">Choose Mode of transport</option>
+                            {% for i in category %}
+                                <option value="{{i.id}}">{{i.categoryname}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Source</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="source" value="" class="form-control" placeholder="Enter source location" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Destination</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="destination" value="" class="form-control" placeholder="Enter destination location" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">From Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" name="fromdate" value="" class="form-control" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">To Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" name="todate" value="" class="form-control" required='true'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Cost</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="cost" value="" class="form-control" placeholder="Enter cost" required='true'>
+                    </div>
+                </div>
+             
+                <button type="submit" class="btn btn-primary btn-user btn-block">Add Passes</button>    
+            </form>
+        </div>
+    </div>   
+</div>              
+
+{% endblock %}

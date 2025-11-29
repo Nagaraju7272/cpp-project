@@ -1,0 +1,25 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border: none; color: #fff; border-radius: 5px; margin-bottom: 20px;">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: #fff;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); border: none; color: #fff; border-radius: 5px; margin-bottom: 20px;">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: #fff;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}

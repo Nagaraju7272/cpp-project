@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-block">
+            <h4 class="sub-title">Add Mode of transport</h4>
+            <form method="POST" action="{% url 'add_category' %}">
+                {% include 'includes/messages.html' %}
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mode of transport Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="categoryname" placeholder="Enter Mode of transport name" required="True">
+                    </div>
+                </div>
+               
+                <button type="submit" class="btn btn-primary btn-user btn-block">Add Mode of transport</button>    
+            </form>
+        </div>
+    </div>   
+</div>              
+
+{% endblock %}

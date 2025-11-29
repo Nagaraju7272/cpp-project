@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-block">
+                <h4 class="sub-title">Between Dates Report</h4>
+                <form method="get" action="{% url 'data_between_dates' %}">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">From Date</label>
+                        <div class="col-sm-10">
+                            <input type="date" id="query" name="start_date" class="form-control" required="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">To Date</label>
+                        <div class="col-sm-10">
+                            <input type="date" id="query" name="end_date" class="form-control" required="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Submit</button>    
+                </form>
+            </div>
+            
+            <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                    <li><i class="fa fa-chevron-left"></i></li>
+                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                    <li><i class="fa fa-minus minimize-card"></i></li>
+                    <li><i class="fa fa-refresh reload-card"></i></li>
+                    <li><i class="fa fa-times close-card"></i></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card-block table-border-style">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>S.NO</th>
+                            <th>Pass Number</th>
+                            <th>Full Name</th>
+                            <th>Contact Number</th>
+                            <th>Email</th>
+                            <th>Creation Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in userpasses %}
+                        <tr>
+                            <th scope="row">{{ i.id}}</th>
+                            <td>{{ i.passnumber}}</td>
+                            <td>{{ i.fullname}}</td>
+                            <td>{{ i.mobilenumber}}</td>
+                            <td>{{ i.email}}</td>
+                            <td>{{ i.passcreated_at}}</td>
+                            <td>
+                                <a href="{% url 'view_passes' i.id %}" class="btn btn-success">View</a>
+                                &nbsp;
+                                <a href="{% url 'delete_passes' i.id %}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" style="text-align: center;">No data found for the selected date range.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>                
+{% endblock %}

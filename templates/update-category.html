@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-block">
+            <h4 class="sub-title">Update Mode of transport Name</h4>
+            <form method="POST" action="{% url 'update_category_details' %}">
+                {% include 'includes/messages.html' %}
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mode of transport Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="categoryname" required="True" value="{{category.categoryname}}">
+                        <input type="hidden" name="cat_id" class="form-control" id="cat_id" required="true" value="{{category.id}}">
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Update Mode of transport</button>
+                </div>
+            </form>
+        </div>
+    </div>   
+</div>              
+
+{% endblock %}

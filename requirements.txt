@@ -1,0 +1,10 @@
+Django==4.2.19
+gunicorn==20.1.0
+pymysql==1.1.1
+buspasslib==0.1.0
+boto3
+requests
+pillow
+reportlab
+psycopg2-binary
+pass_pdf_lib==0.2.0

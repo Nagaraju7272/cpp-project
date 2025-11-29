@@ -1,0 +1,66 @@
+{% load static %}
+
+<nav class="navbar header-navbar pcoded-header" style="background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+    <div class="navbar-wrapper">
+        <div class="navbar-logo">
+            <a class="mobile-menu" id="mobile-collapse" href="#!">
+                <i class="ti-menu" style="color: #fff;"></i>
+            </a>
+            <div class="mobile-search">
+                <div class="header-search">
+                    <div class="main-search morphsearch-search">
+                        <div class="input-group">
+                            <span class="input-group-addon search-close"><i class="ti-close"></i></span>
+                            <input type="text" class="form-control" placeholder="Enter Keyword">
+                            <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="dashboard.html">
+                <strong style="font-size: 20px; color: #4fc3f7;">CityPass</strong>
+            </a>
+            <a class="mobile-options">
+                <i class="ti-more" style="color: #fff;"></i>
+            </a>
+        </div>
+
+        <div class="navbar-container container-fluid">
+            <ul class="nav-left">
+                <li>
+                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu" style="color: #fff;"></i></a></div>
+                </li>
+             
+                <li>
+                    <h4 style="color: #ffffff; padding-top: 20px; font-weight: 500; letter-spacing: 0.5px;">Cloud native Urban Vehicle Transport Pass</h4>
+                </li>
+            </ul>
+            <ul class="nav-right">
+                <li class="user-profile header-notification">
+                    <a href="#!" style="color: #fff;">  
+                        <img src="{% static 'assets/images/avatar-3.jpg'%}" class="img-radius" alt="User-Profile-Image" style="border: 2px solid #4fc3f7;">
+                        <span style="color: #fff;">{{user.first_name}}&nbsp;{{user.last_name}}</span>
+                        <i class="ti-angle-down"></i>
+                    </a>
+                    <ul class="show-notification profile-notification" style="background: #2c3e50; border: 1px solid #34495e;">
+                        <li>
+                            <a href="{% url 'change_password' %}" style="color: #ecf0f1;">
+                                <i class="ti-settings" style="color: #4fc3f7;"></i> Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile' %}" style="color: #ecf0f1;">
+                                <i class="ti-user" style="color: #4fc3f7;"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}" style="color: #ecf0f1;">
+                                <i class="ti-layout-sidebar-left" style="color: #e74c3c;"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

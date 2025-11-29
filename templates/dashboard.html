@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 col-xl-4">
+    <div class="card bg-c-blue order-card">
+        <div class="card-block">
+            <h6 class="m-b-20">Total Bus Mode of transport</h6>
+            <a href="{% url 'manage_category' %}" style="text-decoration: none;">
+                <h2 class="text-right" style="color: #fff;">
+                    <i class="ti-file f-left"></i>
+                    <span>{{ cat_count }}</span>
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-4">
+    <div class="card bg-c-green order-card">
+        <div class="card-block">
+            <h6 class="m-b-20">Total Pass Created</h6>
+            <a href="{% url 'manage_passes' %}" style="text-decoration: none;">
+                <h2 class="text-right" style="color: #fff;">
+                    <i class="ti-file f-left"></i>
+                    <span>{{ pass_count }}</span>
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-4">
+    <div class="card bg-c-yellow order-card">
+        <div class="card-block">
+            <h6 class="m-b-20">Pass Created Today's</h6>
+            <a href="{% url 'manage_passes' %}" style="text-decoration: none;">
+                <h2 class="text-right" style="color: #fff;">
+                    <i class="ti-file f-left"></i>
+                    <span>{{ data_count_today }}</span>
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-4">
+    <div class="card bg-c-pink order-card">
+        <div class="card-block">
+            <h6 class="m-b-20">Pass Created Yesterday</h6>
+            <a href="{% url 'manage_passes' %}" style="text-decoration: none;">
+                <h2 class="text-right" style="color: #fff;">
+                    <i class="ti-file f-left"></i>
+                    <span>{{ data_count_yesterday }}</span>
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-4">
+    <div class="card bg-c-pink order-card">
+        <div class="card-block">
+            <h6 class="m-b-20">Pass Created in Seven Days</h6>
+            <a href="{% url 'manage_passes' %}" style="text-decoration: none;">
+                <h2 class="text-right" style="color: #fff;">
+                    <i class="ti-file f-left"></i>
+                    <span>{{ data_count_last_seven_days }}</span>
+                </h2>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

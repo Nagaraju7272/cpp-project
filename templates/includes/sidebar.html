@@ -1,0 +1,80 @@
+{% load static %}
+<nav class="pcoded-navbar" style="background: linear-gradient(180deg, #1a2332 0%, #2c3e50 100%);">
+    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons" style="color: #fff;"></i></a></div>
+    <div class="pcoded-inner-navbar main-menu" style="background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);">
+        
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" style="padding-left: 10px; padding-top: 10px; color: #4fc3f7; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Layout</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="active">
+                <a href="{% url 'dashboard' %}" style="color: #5fcde9;">
+                    <span class="pcoded-micon"><i class="ti-home" style="color: #4fc3f7;"></i><b>D</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)" style="color: #5fcde9;">
+                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt" style="color: #4fc3f7;"></i></span>
+                    <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.main">Mode of transport</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{% url 'add_category' %}" style="color: #bdc3c7;">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.alert">Add Mode of transport</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{% url 'manage_category' %}" style="color: #bdc3c7;">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.breadcrumbs">Manage Mode of transport</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)" style="color: #5fcde9;">
+                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt" style="color: #4fc3f7;"></i></span>
+                    <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.main">Passes</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{% url 'add_passes' %}" style="color: #bdc3c7;">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.alert">Add Passes</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{% url 'manage_passes' %}" style="color: #bdc3c7;">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.basic-components.breadcrumbs">Manage Passes</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="color:#4fc3f7; padding-left: 10px; color: #4fc3f7; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; margin-top: 20px;">Website Details</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a href="{% url 'search_passes' %}" style="color: #5fcde9;">
+                    <span class="pcoded-micon"><i class="ti-layers" style="color: #4fc3f7;"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" style="color:#4fc3f7"  data-i18n="nav.form-components.main">Search Passes</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'data_between_dates' %}" style="color: #5fcde9;">
+                    <span class="pcoded-micon"><i class="ti-layers" style="color: #4fc3f7;"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" style="color:#4fc3f7;"  data-i18n="nav.form-components.main">Report</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

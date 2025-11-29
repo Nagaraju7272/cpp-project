@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-sm-12">
+    <div class="card">
+        <div class="card-block">
+            <h4 class="sub-title">Website Details</h4>
+            <form method="POST" action="{% url 'update_website_details' %}">
+                {% for i in page %}
+                {% include 'includes/messages.html' %}
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Page Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="pagetitle" value="{{i.pagetitle}}">
+                        <input type="hidden" name="web_id" class="form-control" id="web_id" required="true" value="{{i.id}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="address" rows="3">{{i.address}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">About Us</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="aboutus" rows="4">{{i.aboutus}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" value="{{i.email}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mobile Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="mobilenumber" value="{{i.mobilenumber}}">
+                    </div>
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-user btn-block">Update</button>    
+            </form>
+        </div>
+    </div>                 
+</div>
+
+{% endblock %}

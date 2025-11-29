@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>CityPass: Cloud native Urban Vehicle Transport Pass || Login Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css'%}">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css'%}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css'%}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css'%}"> 
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a2332 50%, #2c3e50 100%);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-card {
+            background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid #34495e;
+            max-width: 450px;
+            width: 100%;
+        }
+        
+        .text-center h3 {
+            color: #4fc3f7;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+        
+        .auth-box {
+            padding: 30px;
+            background: rgba(26, 35, 50, 0.6);
+            border-radius: 10px;
+        }
+        
+        .auth-box h3 {
+            color: #4fc3f7 !important;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        
+        .auth-box hr {
+            border-top: 1px solid #34495e;
+            margin: 20px 0;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            background: #1a2332;
+            border: 1px solid #34495e;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        
+        .form-control:focus {
+            background: #1a2332;
+            border-color: #4fc3f7;
+            color: #ecf0f1;
+            box-shadow: 0 0 0 0.2rem rgba(79, 195, 247, 0.25);
+        }
+        
+        .form-control::placeholder {
+            color: #7f8c8d;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .auth-box a {
+            color: #4fc3f7 !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-box a:hover {
+            color: #3498db !important;
+        }
+        
+        .m-b-20 {
+            margin-bottom: 20px;
+        }
+        
+        .m-t-30 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body class="fix-menu">
+    <section class="login p-fixed d-flex text-center">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+                        {% include 'includes/messages.html' %}
+                        <form class="md-float-material" method="POST" action="{% url 'doLogin' %}">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <h3>CityPass</h3>
+                            </div>
+                            <div class="auth-box">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your Email Address" name="email" required>
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                    <span class="md-line"></span>
+                                </div>
+                              
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                                
+                                <a href="{% url 'landingpage' %}">Back Home</a>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Authentication card end -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+ 
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="{% static 'assets/js/jquery/jquery.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/jquery-ui/jquery-ui.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/popper.js/popper.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/bootstrap/js/bootstrap.min.js'%}"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="{% static 'assets/js/jquery-slimscroll/jquery.slimscroll.js'%}"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="{% static 'assets/js/modernizr/modernizr.js'%}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/modernizr/css-scrollbars.js'%}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/common-pages.js'%}"></script>
+</body>
+
+</html>
