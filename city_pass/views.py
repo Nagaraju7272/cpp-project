@@ -385,8 +385,7 @@ def ADD_PASSSES(request):
                 
         else:print("FILE UPLOAD FAILED ...")
 
-        msg = bus_pass_details(pass_number)
-
+        msg = f"Bus Pass Created {pass_number}"
         messages.success(request, msg)
         return redirect('add_passes')
     category = Category.objects.all()
